@@ -1,0 +1,330 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #f1f5f9;
+    --text-dark: #0f172a;
+    --text-light: #475569;
+    --success: #059669;
+    --danger: #dc2626;
+    --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--primary-color) !important;
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: rgba(255, 255, 255, 0.85) !important;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+    opacity: 1;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+.navbar-nav .dropdown-menu {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    animation: fadeInUp 0.2s ease-out;
+    transform-origin: top;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar-nav .dropdown-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Remove all hover background effects */
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active {
+    background-color: transparent !important;
+}
+
+.welcome-section {
+    padding: 4rem 0;
+}
+
+.card {
+    border: none;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-header {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.5rem;
+}
+
+.card-header h5 {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.form-label {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.form-control {
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1), 0 2px 4px -1px rgba(37, 99, 235, 0.06);
+}
+
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    padding: 0.75rem 0;
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.feature-list li:before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    background: rgba(99, 102, 241, 0.1);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.lead {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+h1 {
+    font-weight: 800;
+    color: var(--text-dark);
+    font-size: 2.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+}
+
+h4 {
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+/* Modern background pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: 
+        linear-gradient(90deg, var(--secondary-color) 21px, transparent 1%) center,
+        linear-gradient(var(--secondary-color) 21px, transparent 1%) center,
+        var(--primary-color);
+    background-size: 22px 22px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.875rem;
+    }
+    
+    .card {
+        margin-top: 2rem;
+    }
+    
+    .card-header {
+        padding: 1.25rem;
+    }
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-top: 1px solid #e2e8f0;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #e2e8f0;
+    background-color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.table tbody tr:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+    margin-right: 0.25rem;
+}
+
+.btn-info {
+    background-color: #0ea5e9;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #0284c7;
+    color: white;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: var(--card-shadow);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    animation: fadeInUp 0.2s ease-out;
+    transform-origin: top;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.dropdown-divider {
+    margin: 0.5rem 0;
+    border-color: var(--secondary-color);
+}
+
+/* Profile Picture Hover */
+.nav-link img.rounded-circle {
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover img.rounded-circle {
+    transform: scale(1.1);
+}
